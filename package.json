@@ -1,0 +1,23 @@
+{
+  "name": "social-zone",
+  "version": "1.0.0",
+  "description": "social network API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimberlyamaya/social-zone.git"
+  },
+  "author": "Kimberly Amaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimberlyamaya/social-zone/issues"
+  },
+  "homepage": "https://github.com/kimberlyamaya/social-zone#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  }
+}
