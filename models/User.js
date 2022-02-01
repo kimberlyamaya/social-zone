@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const validator = require("validator");
 
 const UserSchema = new Schema({
     username: {
@@ -11,10 +12,15 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        validate: {
-            validator: () => Promise.resolve(false),
-            message: 'Email validation failed'
+        validate: { 
+            validator: validator.isEmail,
+            mesesage: "{VALUE} is not a valid email",
+            isAsync: false        
         }
+        // validate: {
+        //     validator: () => Promise.resolve(false),
+        //     message: 'Email validation failed'
+        // }
     },
     thoughts: [{
         type: Schema.Types.ObjectId,
