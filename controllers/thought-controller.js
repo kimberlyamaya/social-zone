@@ -47,12 +47,12 @@ const thoughtController = {
               {$push: {thought: _id}}, 
               {new: true})
         })
-        .then(dbUserData => {
-            if(!dbUserData) {
+        .then(dbThoughtData => {
+            if(!dbThoughtData) {
                 res.status(404).json({message: 'No user found with this id!'});
                 return;
             }
-            res.json(dbUserData)
+            res.json(dbThoughtData)
         })
         .catch(err => res.status(400).json(err));
       },
