@@ -71,8 +71,8 @@ const addDateSuffix = date => {
   
     let hour;
     // check for 24-hr time
-    if (dateObj.getHours > 12) {
-      hour = Math.floor(dateObj.getHours() / 2);
+    if (dateObj.getHours() > 12) {
+      hour = Math.floor(dateObj.getHours() - 12);
     } else {
       hour = dateObj.getHours();
     }
@@ -81,8 +81,12 @@ const addDateSuffix = date => {
       hour = 12;
     }
   
-    const minutes = dateObj.getMinutes();
-  
+    let minutes = dateObj.getMinutes();
+    // if minutes < 10
+    if (minutes < 10) {
+      // then concat minutes = "0" + minutes
+      minutes = "0" + minutes
+    }
     // set `am` or `pm`
     let periodOfDay;
   
